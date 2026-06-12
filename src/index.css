@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@media print {
+  /* Set exact page size for opened vertical booklet */
+  @page {
+    size: 125mm 176mm;
+    margin: 0;
+  }
+
+  /* Remove backgrounds for all except card viewport */
+  body {
+    background: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide headers, footers, parameters, controls, sidebars, buttons, etc. */
+  header,
+  footer,
+  aside,
+  form,
+  section,
+  button,
+  nav,
+  p.leading-relaxed,
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Position & isolate the Passport Card on standard paper print output */
+  #passport-card-viewport {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 125mm !important;
+    height: 176mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #d8cdb2 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    background-color: #faf6e9 !important;
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure child text and elements within the card render properly */
+  #passport-card-viewport * {
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Print Guilloche background image at clean contrast levels */
+  #passport-card-viewport div[style*="guilloche"] {
+    opacity: 0.16 !important;
+    display: block !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Disable screen-only animated holographic glare to avoid black print areas */
+  .hologram-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Make sure photos print normally */
+  #passport-card-viewport img {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    filter: none !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Biometric high-tech scanning animations and glow effects */
+@keyframes scan {
+  0%, 100% {
+    top: 15%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 85%;
+    opacity: 1;
+  }
+}
+
+.glow-sm {
+  text-shadow: 0 0 5px currentColor;
+}
+
+.glow-cyan {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.8);
+}
+

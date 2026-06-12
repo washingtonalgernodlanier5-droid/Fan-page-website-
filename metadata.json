@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Volodymyr Testardi Passport Visualizer",
+  "description": "An interactive digital passport viewer and creator demonstrating secure dokument layout design, details validation, signature customizer, and official security watermarks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
