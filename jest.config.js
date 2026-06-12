@@ -12,6 +12,7 @@ export default {
       tsconfig: {
         jsx: 'react-jsx',
         esModuleInterop: true,
+        allowSyntheticDefaultImports: true,
       },
     }],
   },
